@@ -1,154 +1,183 @@
-// //1. Ask the user for his age and determine who he is: a child (0–2), a teenager (12–18), an adult (18_60), or a senior citizen (60– ...).
-let age = prompt("enter your age");
-if (age >= 0 && age <= 2) {
-  console.log("you are child", age);
-} else if (age >= 12 && age <= 18) {
-  console.log("you are a teenager", age);
-} else if (age >= 18 && age <= 60) {
-  console.log("you are an adult", age);
-} else if (age > 60) {
-  console.log("you are a you're senior citizen", age);
+/**********************************************************************************************************************
+                                     ************HOMEWORK TWO************
+***********************************************************************************************************************/
+
+/**********************************************************************************************************************
+ 1. Ask the user for his age and determine who he is: a child (0–2), a teenager (12–18), an adult (18_60), 
+                                  or a senior citizen (60– 
+***********************************************************************************************************************/
+
+let userAge = prompt("plz enter your age To Verify");
+if (userAge >= 0 && userAge <= 2) {
+  console.log(`You are a Child ${userAge}`);
+} else if (userAge >= 12 && userAge <= 18) {
+  console.log(`You are Teenager ${userAge}`);
+} else if (userAge >= 18 && userAge <= 60) {
+  console.log(`You are Adult ${userAge}`);
+} else if (userAge > 60) {
+  console.log(`you are a you're senior citizen ${userAge}`);
 }
 
-// //2 Ask the user for a number from 0 to 9 and display a special character located on this key (1– !, 2–
-let number = prompt("enter a number");
-number = parseInt(number);
+/*********************************************************************************************************************
+ 2 Ask the user for a number from 0 to 9 and display a special character located on this key (1– !, 2– @, 3– #, etc.).
+**********************************************************************************************************************/
+
+let number = parseInt(prompt("enter a number To display a special character located on this key"));
+
 if (number === 1) {
   console.log("!");
 } else if (number === 2) {
-  number = parseInt(number);
-
   console.log("@");
 } else if (number === 3) {
-  number = parseInt(number);
-
   console.log("#");
 } else if (number === 4) {
-  number = parseInt(number);
-
   console.log("$");
 } else if (number === 5) {
-  number = parseInt(number);
-
   console.log("%");
 } else if (number === 6) {
-  number = parseInt(number);
-
   console.log("^");
 } else if (number === 7) {
-  number = parseInt(number);
   console.log("&");
 } else if (number === 8) {
-  number = parseInt(number);
   console.log("*");
 } else if (number === 9) {
-  number = parseInt(number);
   console.log("(");
 } else {
   console.log("enter a valid number!");
 }
 
-// //3. Ask the user for a three-digit number and check if it contains the same numbers
-let n1 = prompt("enter n1");
-n1 = parseInt(n1);
-let n2 = prompt("enter n2");
-n2 = parseInt(n2);
-let n3 = prompt("enter n3");
-n3 = parseInt(n3);
+/*********************************************************************************************************************
+ 3. Ask the user for a three-digit number and check if it contains the same numbers
+**********************************************************************************************************************/
 
-if (n1 == n2 && n1 == n3 && n2 == n3) {
-  console.log("all the numbers are same");
-} else if (n1 == n2 || n1 == n3 || n2 == n3) {
-  console.log("two numbers are same");
-} else if (n1 !== n2 && n1 !== n3 && n2 !== n3) {
-  console.log("The numbers are not the same");
+let UserDigits = prompt("Plz Enter three Digits To check if it contains the same numbers");
+
+let dig1 = UserDigits[0];
+let dig2 = UserDigits[1];
+let dig3 = UserDigits[2];
+
+if (dig1 == dig2 && dig1 == dig3 && dig2 == dig3) {
+  console.log("All The Numbers are Same");
+} else if (dig1 == dig2 || dig1 == dig3 || dig2 == dig3) {
+  console.log("Two  Numbers are Same");
+} else if (dig1 !== dig2 && dig1 !== dig3 && dig2 !== dig3) {
+  console.log("The Numbers are Not Same");
 }
 
-// //4 Ask the user for the year and check if it is a leap year or not. A leap year is either a multiple of 400, or a multiple of 4 and is not a multiple of 100.
+/*********************************************************************************************************************
+      4 Ask the user for the year and check if it is a leap year or not. A leap year is either a multiple of 400,
+                              or a multiple of 4 and is not a multiple of 100.
+**********************************************************************************************************************/
+let year = parseInt(prompt("enter a year To check if it is a leap year or not"));
 
-let year = prompt("enter a year");
-year = parseInt(year);
 if (year % 400 === 0) {
   console.log("is a leap year");
-} else if (year % 4 === 0) {
-  console.log("is not a leap year");
-} else if (year % 100 === 0) {
+} else if (year % 4 === 0 && year % 100 !== 0) {
   console.log("is a leap year");
 } else {
-  console.log("try to enter a leap year");
+  console.log("it's not a leap yearr");
 }
 
-// //5. Prompt the user for a five-digit number and determine if it is a palindrome.
-let num = prompt("Enter any 5 Digit number:");
-let n = parseInt(num);
-while (n < 10000 && n > 99999) {
-  alert("The Number is not a five digit number");
-  num = prompt("Enter any 5 Digit number:");
-  n = parseInt(num);
+
+/*********************************************************************************************************************
+      5.Prompt the user for a five-digit number and determine if it is a palindrome.
+**********************************************************************************************************************/
+
+let digitNo = prompt("Plz Enter a five-digit number To determine if it is a palindrome or not");
+
+let firstDigit = digitNo [0];
+let secondDigit =digitNo [1];
+let thirdDigit = digitNo [2];
+let fourthDigit =digitNo [3];
+let fifthDigit = digitNo [4];
+
+if(firstDigit== fifthDigit && secondDigit == fourthDigit){
+  console.log("is a palindrome!");
 }
-let digit1 = n % 10;
-n = n / 10;
-let digit2 = n % 10;
-n = n / 10;
-let digit3 = n % 10;
-n = n / 10;
-let digit4 = n % 10;
-let digit5 = n / 10;
-if (parseInt(digit1) == parseInt(digit5)) {
-  if (parseInt(digit2) == parseInt(digit4)) {
-    console.log(num + " is a Palindrome ");
+else{
+  console.log("is not a palindrome");
+}
+
+/*********************************************************************************************************************
+6.Write a currency converter. The user enters the amount of USD, chooses which currency he wants to transfer EUR,UAN 
+                    or AZN, and receives the corresponding amount in response.
+**********************************************************************************************************************/
+let currence = parseInt(prompt("Plz Enter Amount in USD"));
+let convertion = prompt("Plz choose a currency To convert: 1:Euro, 2:UAN  and 3: AZN");
+let convertionRate = 0; 
+if(convertion == 'euro' || convertion == 'Euro' || convertion == 'EURO' || convertion == 1 ){
+  convertionRate = 0.87;
+}
+  else if(convertion == 'uan' || convertion == 'Uan' || convertion == 'UAN' || convertion == 2 ){
+    convertionRate = 27.59;
   }
+  else if(convertion == 'azn' || convertion == 'Azn' || convertion == 'AZN' || convertion == 3 ){
+    convertionRate = 1.7;
+  }
+  else {
+      alert(`PLZ NOTE: the currencies are: Euro, UAN  and AZN You can simply choose numbers from 1 to 3 Respectively
+      Thanks!`);
+    }
+    console.log(`${currence} is equal to ${currence * convertionRate} AZN`);
+
+/*********************************************************************************************************************
+   7.Request the purchase amount from the user and withdraw the amount to be paid with a discount: from 200 to 300 - 
+                     the discount will be 3%, from 300 to 500 - 5%, from 500 and above - 7%.
+**********************************************************************************************************************/
+let purchaseAmount = parseInt(prompt("Enter a Purchase Amount"));
+let disc = 0;
+if (purchaseAmount >= 200 && purchaseAmount <= 300){
+  disc = 0.03;
+}
+else if(purchaseAmount >= 300 && purchaseAmount <= 500){
+  disc = 0.05
+}
+else if (purchaseAmount >= 500){
+  disc = 0.07;
+}
+console.log(purchaseAmount- purchaseAmount*disc);
+/*******************************************************************************************************************************
+8.Ask the user for the circumference and perimeter of the square. Determine if such a circle can fit into the specified square.
+********************************************************************************************************************************/
+let circumference = parseInt(prompt("Enter the Circumference"));
+let perimeter =  parseInt(prompt("enter the perimeter"));
+let sideLength = perimeter / 4;
+let rad = Math.floor(circumference * Math.PI);
+let diameter = rad * 2;
+if (diameter <= sideLength){
+  console.log('The Circle Can Fit!');
 } else {
-  console.log(num + " is not a Palindrome ");
+  console.log("The Circle Canot Fit!");
 }
 
-// //6  Write a currency converter. The user enters the amount of USD, chooses which currency he wants to transfer EUR, UAN or AZN, and receives the corresponding amount in response
-let amount = prompt("enter amount");
-let a = parseInt(amount);
-let currency = prompt(
-  "plz choose a currency To convert: 1: for Euro , 2: UAH  and 3: AZN"
-);
-let no = 0;
-if (parseInt(currency) === 1) {
-  no = 0.87;
-  console.log(a * no);
-} else if (parseInt(currency) === 2) {
-  no = 27.59;
-  console.log(a * no);
-} else if (parseInt(currency) === 3) {
-  no = 1.7;
-  console.log(a * no);
-} else {
-  console.log("plz enter a valid number from 1 to 3");
-}
+/*******************************************************************************************************************************
+9.Ask the user 3 questions, each question has 3 answer options. For each correct answer 2 points are awarded. After the questions,
+                                       display the number of points to the user.
+********************************************************************************************************************************/
 
-//7.Request the purchase amount from the user and withdraw the amount to be paid with a discount: from 200 to 300 - the discount will be 3%, from 300 to 500 - 5%, from 500 and above - 7%.
+let question1 ="what country is BMW from? 1- Germany, 2- UK, 3- China";
+let question2 = "what is the capital of Ukraine? 1-Moscow, 2-Kiev, 3-London";
+let question3 = "what programming language can browser read? 1- Haskle, 2--Java, 3- JavaScript";
 
-let purchaseAmount = prompt("enter a purchase amount");
-purchaseAmount =parseInt(purchaseAmount);
-let discount = 0;
-if (purchaseAmount >= 200 && purchaseAmount <= 300 ) {
-  discount = 0.03;
-  let rest = purchaseAmount-(purchaseAmount*discount)
-  console.log("discount of ", purchaseAmount*discount ,"your rest is:",rest);
-}
+let answer1 =prompt(question1);
+let answer2 =prompt(question2);
+let answer3 =prompt(question3);
 
+let points = 0;
+ if(answer1 == '1'){
+   points += 2;
+ }
+ 
+ if (answer2 =='2'){
+  points += 2;
+ }
 
-//8.Ask the user for the circumference and perimeter of the square. Determine if such a circle can fit into the specified square.
-let circumPerimeter = prompt("enter a circumference of the square ");
-// c = a*4;
-let c = circumPerimeter*4;
-// The circumference of a circle is 2 pi (r) 
-console.log("circumference of square",c);
-console.log("circumference of circle",2*circumPerimeter*3.142);
-
-
-
-//9.Ask the user 3 questions, each question has 3 answer options. For each correct answer 2 points are awarded. After the questions, display the number of points to the user.
-
-
-
-//10.Request a date (day, month, year) and display the date following it. Consider the possibility of moving to the next month, year, and leap year
-
-
-
+ if (answer3 == '3'){
+  points += 2;
+ }
+alert(`You have got ${points} Marks`)
+ console.log(points);
+/*******************************************************************************************************************************
+10. Request a date (day, month, year) and display the date following it. Consider the possibility of moving to the next month, 
+                                                      year, and leap year.
+********************************************************************************************************************************/
