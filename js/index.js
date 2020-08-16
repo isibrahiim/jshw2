@@ -181,3 +181,13 @@ alert(`You have got ${points} Marks`)
 10. Request a date (day, month, year) and display the date following it. Consider the possibility of moving to the next month, 
                                                       year, and leap year.
 ********************************************************************************************************************************/
+let day = new Date('Aug 16, 2020');
+console.log(day); // Aug 16 2020
+
+let nextDay = new Date(day);
+nextDay.setDate(day.getDate() + 1);
+console.log(nextDay); // Aug 17 2020 
+
+
+
+
